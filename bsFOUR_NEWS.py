@@ -13,7 +13,7 @@ def listToString(s):
     str1 = " "
     return (str1.join(s))
 
-
+print('Started')
 for x in range(2,10):
 
     gktoday = requests.get('https://currentaffairs.gktoday.in/page/{}'.format(x))
@@ -61,3 +61,5 @@ import pandas as pd
 dataset = list(zip(id, Date_LIST, Headlines_LIST,desc_LIST))
 df = pd.DataFrame(data=dataset, columns=["ID", "DATE", "HEADLINES","DESC"])
 df.to_csv("tempDATA.csv", index=False, header=True)
+
+print('Exported')
