@@ -39,9 +39,8 @@ def create_dict(list_string):
             dict[english(x)] = pun_list
             tst = english(x)
         elif re.match('^[a-zA-Z]+', x) is None:
-            pun_list_add = []
-            pun_list_add.append(punjabi(x))
             dict[tst].append(punjabi(x))
+        print(english(x),'-----', punjabi(x))
     return dict
 
 
@@ -49,7 +48,11 @@ list_string = []
 
 with open('temp.txt', 'r', encoding='UTF-8') as f:
     for line in f:
-        y = line.split()
-        list_string.append(listToString(y))
+        list_string.append(line)
+        # print(listToString(y))
 
-print(create_dict(list_string))
+# print(create_dict(list_string))
+dict = create_dict(list_string)
+
+[print('Key:', key,  '\nValue: ', value) for key, value in dict.items()]
+

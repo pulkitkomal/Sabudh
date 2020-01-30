@@ -14,9 +14,9 @@ def listToString(s):
     return (str1.join(s))
 
 print('Started')
-for x in range(2,10):
+for x in range(2,15):
 
-    gktoday = requests.get('https://currentaffairs.gktoday.in/page/{}'.format(x))
+    gktoday = requests.get('https://www.currentaffairs.gktoday.in/page/{}'.format(x))
     soup = BeautifulSoup(gktoday.text, "html.parser")
 
 # print(soup.prettify())
