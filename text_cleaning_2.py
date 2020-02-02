@@ -13,6 +13,8 @@ def listToString(s):
 
 def english(string):
     split_eng = re.split("[^a-zA-Z?.,()-]*", string)
+    # print(split_eng)
+
     string_out = listToString(split_eng)
     return string_out
 
@@ -53,11 +55,11 @@ for x in range(0, len(list_string)):
     pun_list = []
     for y in range(0, len(list_string[x])):
         z = list_string[x][y]
-        if re.match('^[a-zA-Z]+', english(z)) is not None:
+        if re.match('^[a-zA-Z.]+', english(z)) is not None:
             lst.append(z)
             lst_eng.append(lst)
 
-        elif re.match('^[a-zA-Z]+', english(z)) is None:
+        elif re.match('^[a-zA-Z.]+', english(z)) is None:
             ky = TreebankWordDetokenizer().detokenize(lst)
             tmp = punjabi(z)
             if tmp == '':
@@ -75,9 +77,15 @@ for x in range(0, len(list_string)):
 #
 # for x in lst_pun:
 #     print(x)
-[print('Key:', key,  '\nValue: ', value) for key, value in dict.items()]
+# [print('Key:', key,  '\nValue: ', value) for key, value in dict.items()]
+ko = []
+vo = []
+for key,values in dict.items():
+    ko.append(key)
+    vo.append(values)
 
-
+print(ko)
+print(vo)
 
 
 
