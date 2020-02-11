@@ -39,10 +39,11 @@ def punjabi(string):
 
 list_string = []
 
-with open('temp.txt', 'r', encoding='UTF-8') as f:
+with open('./t1.txt', 'r', encoding='UTF-8') as f:
     for line in f:
         y = line.split()
         list_string.append(word_tokenize(line))
+
 
 # print(list_string)
 lst_eng = []
@@ -77,15 +78,7 @@ for x in range(0, len(list_string)):
 #
 # for x in lst_pun:
 #     print(x)
-# [print('Key:', key,  '\nValue: ', value) for key, value in dict.items()]
-ko = []
-vo = []
-for key,values in dict.items():
-    ko.append(key)
-    vo.append(values)
-
-print(ko)
-print(vo)
+[print('Key:', key,  '\nValue: ', value) for key, value in dict.items()]
 
 
 

@@ -40,13 +40,12 @@ def create_dict(list_string):
             tst = english(x)
         elif re.match('^[a-zA-Z]+', x) is None:
             dict[tst].append(punjabi(x))
-        print(english(x),'-----', punjabi(x))
     return dict
 
 
 list_string = []
 
-with open('temp.txt', 'r', encoding='UTF-8') as f:
+with open('./t1.txt', 'r', encoding='UTF-8') as f:
     for line in f:
         list_string.append(line)
         # print(listToString(y))
@@ -55,4 +54,4 @@ with open('temp.txt', 'r', encoding='UTF-8') as f:
 dict = create_dict(list_string)
 
 [print('Key:', key,  '\nValue: ', value) for key, value in dict.items()]
-
+print(len(list(dict.keys())))
