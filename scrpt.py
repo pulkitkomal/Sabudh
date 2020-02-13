@@ -106,10 +106,10 @@ class punjabiExtraction():
 pe = punjabiExtraction()
 temp_dict = pe.extraction()
 
-with open ("dummy_file.pkl","wb") as dummy:
-   pickle.dump(temp_dict,dummy)
-with open("dummy_file.pkl","rb") as dummy:
-   dummy_test_data=pickle.load(dummy)
-
+with open("data_extracted.pkl", "wb") as data:
+   pickle.dump(temp_dict,data)
+with open("data_extracted.pkl", "rb") as data:
+    dict_text = pickle.load(data)
+print(dict_text)
 
 #D:\PyCharm\Sabudh\punjabi
